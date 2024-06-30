@@ -1,0 +1,12 @@
+
+.button {
+    padding: 16px 32px;
+    font-family: inherit;
+    cursor: pointer;
+    border-radius: 12px;
+    font-size: 16px;
+    border: none;
+    background:  rgba(123, 110, 246, 1)
+}
+
+
