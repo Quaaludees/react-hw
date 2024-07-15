@@ -1,6 +1,7 @@
 .input-wrapper {
     position:relative;
-
+    display: inline;
+    padding-right: 8px;
 }
 
 .input-wrapper__icon {
@@ -31,3 +32,7 @@
     outline: none;
 }
 
+.input-wrapper__input:hover {
+    border: 1px solid #475069;
+
+}

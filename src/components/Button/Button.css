@@ -9,4 +9,6 @@
     background:  rgba(123, 110, 246, 1)
 }
 
-
+.button:hover {
+    background:  rgba(123, 125, 246, 1)
+}
