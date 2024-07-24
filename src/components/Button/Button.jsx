@@ -1,10 +1,15 @@
 import './Button.css';
 
-function Button({ children, onClick, type='button' }) {
+const variantsMaps = {
+    button: 'button',
+    text: 'button-text'
+}
+
+function Button({ children, onClick, type='button', variants = 'button', className= ''}) {
 
 
     return (
-        <button className='button' type={type} onClick={onClick}>{children}</button>
+        <button className={[variantsMaps[variants],className].join(' ')} type={type} onClick={onClick}>{children}</button>
     );
 }
 

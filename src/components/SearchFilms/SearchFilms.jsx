@@ -4,9 +4,10 @@ import {Paragraph} from "../Paragraph/index.js";
 import Input from "../Input/Input.jsx";
 import {Button} from "../Button/index.js";
 import './SearchFilms.css';
+import FilmCard from "../FilmCard/FilmCard.jsx";
+import {FILMS_DATA, TEXT_CONTENT} from "./constans";
 
 
-const TEXT_CONTENT = "Введите название фильма, сериала или мультфильма для поиска и добавления в избранное.";
 
 function SearchFilms() {
     const handleClick = () => {
@@ -26,8 +27,13 @@ function SearchFilms() {
             <Input placeholder="Введите название" onChange={handleChange} isSearch/>
             <Button onClick={handleClick}>Искать</Button>
         </div>
-
+        <div className='search_films__list'>
+            {FILMS_DATA.map(({filmName,poster,count, isFavorites}) => (
+                <FilmCard key={filmName} filmName={filmName} poster={poster} isFavorites={isFavorites} count={count}/>
+            ))}
+        </div>
     </>;
+
 }
 
 export default SearchFilms;
