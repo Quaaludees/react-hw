@@ -1,0 +1,38 @@
+.input-wrapper {
+    position:relative;
+    display: inline;
+    padding-right: 8px;
+}
+
+.input-wrapper__icon {
+    position: absolute;
+    box-sizing:border-box;
+    top:50%;
+    left: 16px;
+    transform: translateY(-50%);
+}
+
+.input-wrapper__input {
+    height: 64px;
+    padding: 12px 16px 12px 16px;
+    border-radius: 12px;
+    border: 1px solid #323B54;
+    background: #121829;
+    color: #475069;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16px;
+}
+
+.input-wrapper__input__search {
+    padding: 12px 16px 12px 56px;
+}
+
+.input-wrapper__input:focus, .input-wrapper__input:active {
+    outline: none;
+}
+
+.input-wrapper__input:hover {
+    border: 1px solid #475069;
+
+}

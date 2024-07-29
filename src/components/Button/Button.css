@@ -1,0 +1,27 @@
+
+.button {
+    padding: 16px 32px;
+    font-family: inherit;
+    cursor: pointer;
+    border-radius: 12px;
+    font-size: 16px;
+    border: none;
+    background:  rgba(123, 110, 246, 1)
+}
+
+.button:hover {
+    background:  rgba(123, 125, 246, 1)
+}
+
+.button-text {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #7B6EF6;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 4px;
+    font-size: 16px;
+    font-weight: 600;
+}
