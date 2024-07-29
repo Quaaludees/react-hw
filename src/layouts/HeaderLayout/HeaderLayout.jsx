@@ -1,10 +1,10 @@
-import './HeaderLayout.css';
+import styles from './HeaderLayout.module.css';
 
-function HeaderLayout({ children }) {
+const HeaderLayout = ({ children }) => {
 
 
     return (
-        <div className='header-wrapper'>
+        <div className={styles.wrapper}>
             {children}
         </div>
     );

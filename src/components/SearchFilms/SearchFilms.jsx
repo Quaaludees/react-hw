@@ -3,13 +3,13 @@ import {Title} from "../Title/index.js";
 import {Paragraph} from "../Paragraph/index.js";
 import Input from "../Input/Input.jsx";
 import {Button} from "../Button/index.js";
-import './SearchFilms.css';
+import styles from './SearchFilms.module.css';
 import FilmCard from "../FilmCard/FilmCard.jsx";
 import {FILMS_DATA, TEXT_CONTENT} from "./constans";
 
 
 
-function SearchFilms() {
+const SearchFilms = () => {
     const handleClick = () => {
         console.log(inputData);
     };
@@ -21,16 +21,17 @@ function SearchFilms() {
     };
 
     return <>
-        <div className="search_films__wrapper">
+        <div className={styles.wrapper}>
             <Title title="ПОИСК"/>
             <Paragraph>{TEXT_CONTENT}</Paragraph>
             <Input placeholder="Введите название" onChange={handleChange} isSearch/>
             <Button onClick={handleClick}>Искать</Button>
         </div>
-        <div className='search_films__list'>
+        <div className={styles.list}>
             {FILMS_DATA.map(({filmName,poster,count, isFavorites}) => (
                 <FilmCard key={filmName} filmName={filmName} poster={poster} isFavorites={isFavorites} count={count}/>
             ))}
+            {/*добавить проверку на пустой массив когда будет страницы !ой не найдено!*/}
         </div>
     </>;
 

@@ -1,9 +1,9 @@
 import React from 'react';
-import './Paragraph.css';
+import styles from './Paragraph.module.css';
 
 const Paragraph = ({ children }) => {
     return (
-        <p className="paragraph__main">
+        <p className={styles.root}>
             {children}
         </p>
     );

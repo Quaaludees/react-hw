@@ -1,26 +1,14 @@
-import './HeaderNavigation.css';
+import styles from './HeaderNavigation.module.css';
 import LoginIcon from "../icons/LoginIcon.jsx";
+import {Link} from "../Link/index.js";
 
 
-function Link({title, count, icon, href}) {
-    return <li className='header-navigation__list__item'>
-        <a className='header-navigation__list__item' href={href}>
-            {title}
-            {count && (
-                <div className='link-count'>{count}</div>
-            )}
-            {icon}
-        </a>
-    </li>;
-
-}
-
-function HeaderNavigation() {
+const HeaderNavigation = () => {
 
 
     return (
-        <nav className='header-navigation'>
-            <ul className='header-navigation__list'>
+        <nav className={styles.navigation}>
+            <ul className={styles.list}>
                 <Link href={'#'} title={'Поиск фильмов'}/>
                 <Link count={2} title={'Мои фильмы'}/>
                 <Link icon={<LoginIcon/>} title={'Войти'}/>
