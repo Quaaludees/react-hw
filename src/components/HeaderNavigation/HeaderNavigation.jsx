@@ -1,20 +1,20 @@
 import styles from './HeaderNavigation.module.css';
-import LoginIcon from "../icons/LoginIcon.jsx";
-import {Link} from "../Link/index.js";
+import MenuItem from '../MenuItem/MenuItem.jsx';
 
 
-const HeaderNavigation = () => {
+const HeaderNavigation = ({menuItems}) => {
 
 
     return (
         <nav className={styles.navigation}>
             <ul className={styles.list}>
-                <Link href={'#'} title={'Поиск фильмов'}/>
-                <Link count={2} title={'Мои фильмы'}/>
-                <Link icon={<LoginIcon/>} title={'Войти'}/>
+                {menuItems.map(({href, title, count, icon, onClick, isHidden}, index) => {
+                    return <MenuItem key={`${title}_${index}`} href={href} title={title} count={count} icon={icon} onClick={onClick} isHidden={isHidden}/>;
+                })}
+
             </ul>
         </nav>
     );
-}
+};
 
 export default HeaderNavigation;

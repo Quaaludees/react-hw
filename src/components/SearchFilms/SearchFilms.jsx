@@ -1,11 +1,11 @@
-import {useState} from "react";
-import {Title} from "../Title/index.js";
-import {Paragraph} from "../Paragraph/index.js";
-import Input from "../Input/Input.jsx";
-import {Button} from "../Button/index.js";
+import {useState} from 'react';
+import {Title} from '../Title/index.js';
+import {Paragraph} from '../Paragraph/index.js';
+import Input from '../Input/Input.jsx';
+import {Button} from '../Button/index.js';
 import styles from './SearchFilms.module.css';
-import FilmCard from "../FilmCard/FilmCard.jsx";
-import {FILMS_DATA, TEXT_CONTENT} from "./constans";
+import FilmCard from '../FilmCard/FilmCard.jsx';
+import {FILMS_DATA, TEXT_CONTENT} from './constans';
 
 
 
@@ -35,6 +35,6 @@ const SearchFilms = () => {
         </div>
     </>;
 
-}
+};
 
 export default SearchFilms;

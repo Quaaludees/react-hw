@@ -1,10 +1,10 @@
 import React from 'react';
 import styles from  './FilmCard.module.css';
-import {Button} from "../Button";
-import StarIcon from "../icons/StarIcon.jsx";
-import LikeIcon from "../icons/LikeIcon.jsx";
-import FavIcon from "../icons/FavIcon.jsx";
-import cn from 'classnames'
+import {Button} from '../Button';
+import StarIcon from '../icons/StarIcon.jsx';
+import LikeIcon from '../icons/LikeIcon.jsx';
+import FavIcon from '../icons/FavIcon.jsx';
+import cn from 'classnames';
 
 
 const FilmCard = ({count, poster, filmName, isFavorites}) => {
@@ -30,7 +30,7 @@ const FilmCard = ({count, poster, filmName, isFavorites}) => {
                 </>}
             </Button>
         </div>
-    </div>
+    </div>;
 };
 
 export default FilmCard;
