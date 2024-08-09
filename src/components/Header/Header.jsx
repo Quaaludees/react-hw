@@ -2,33 +2,19 @@ import styles from './Header.module.css';
 import HeaderNavigation from '../HeaderNavigation/HeaderNavigation.jsx';
 import LoginIcon from '../icons/LoginIcon.jsx';
 import UserIcon from '../icons/UserIcon.jsx';
+import {useUserContext} from '../../provider/user/index.js';
 
 
 
-const Header = ({ state, setState, currentUser}) => {
-
-
-    console.log(currentUser);
-
-    const logout = () => {
-        setState(state.map(el => {
-            if (el.name === currentUser.name) {
-                return {
-                    ...el,
-                    isLogin: false
-                };
-            }
-            return el;
-        }));
-
-    };
+const Header = () => {
     
+    const {user, onLogout} = useUserContext();
     
     const menuItems = [
         { href: '#', title: 'Поиск фильмов' },
-        { href: '#', title: 'Мои фильмы', count: 2 },
-        { href: '#', title: currentUser?.name, icon: <UserIcon />, isHidden: !currentUser },
-        { onClick: logout, title: currentUser ? 'Выйти' : 'Войти' , icon: <LoginIcon /> }
+        { href: '#', title: 'Мои фильмы', count: 2, isHidden: !user },
+        { href: '#', title: user?.name, icon: <UserIcon />, isHidden: !user },
+        { onClick: onLogout, title: user ? 'Выйти' : 'Войти' , icon: <LoginIcon /> }
 
     ];
 
