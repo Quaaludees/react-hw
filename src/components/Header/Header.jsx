@@ -7,13 +7,17 @@ import {useUserContext} from '../../provider/user/index.js';
 
 
 const Header = () => {
-    
+
+
+    const handleClick = (path) => () => {
+        console.log(path);
+    };
     const {user, onLogout} = useUserContext();
     
     const menuItems = [
-        { href: '#', title: 'Поиск фильмов' },
-        { href: '#', title: 'Мои фильмы', count: 2, isHidden: !user },
-        { href: '#', title: user?.name, icon: <UserIcon />, isHidden: !user },
+        { onClick: handleClick('search'), title: 'Поиск фильмов' },
+        { onClick: handleClick('fav'), title: 'Мои фильмы', count: 2, isHidden: !user },
+        { onClick: handleClick('profile'), title: user?.name, icon: <UserIcon />, isHidden: !user },
         { onClick: onLogout, title: user ? 'Выйти' : 'Войти' , icon: <LoginIcon /> }
 
     ];
