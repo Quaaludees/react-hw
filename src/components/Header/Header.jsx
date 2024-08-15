@@ -18,7 +18,7 @@ const Header = () => {
         { onClick: handleClick('search'), title: 'Поиск фильмов' },
         { onClick: handleClick('fav'), title: 'Мои фильмы', count: 2, isHidden: !isLogin },
         { onClick: handleClick('profile'), title: user?.name, icon: <UserIcon />, isHidden: !isLogin },
-        { onClick: onLogout, title: isLogin ? 'Выйти' : 'Войти' , icon: <LoginIcon /> }
+        { onClick: isLogin ? onLogout : handleClick('auth') , title: isLogin ? 'Выйти' : 'Войти' , icon: <LoginIcon /> }
 
     ];
 
