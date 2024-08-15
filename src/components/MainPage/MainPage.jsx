@@ -7,11 +7,11 @@ import {useUserContext} from '../../provider/user/index.js';
 const MainPage = () => {
 
 
-    const {user} = useUserContext();
+    const {isLogin} = useUserContext();
     
     
     return (
-        <Maybe when={!!user} fallback={
+        <Maybe when={!!isLogin} fallback={
             <FormLogin/>
         }>
             <SearchFilms/>

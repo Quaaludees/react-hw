@@ -8,9 +8,12 @@ import {UserContext} from './user.context.jsx';
 export const UserContextProvider = ({children}) => {
 
 
+
     const [users = [], setUsers] = useLocalStorage('user');
 
     const currentUser = users.find(el => el.isLogin);
+
+    const isLogin = !!currentUser;
 
     const handleLogin = (userName) => {
         const user = users?.find((el) => el.name === userName);
@@ -53,7 +56,7 @@ export const UserContextProvider = ({children}) => {
         }));
     };
 
-    return <UserContext.Provider value={{user: currentUser, onLogin: handleLogin, onLogout: handleLogout}} >
+    return <UserContext.Provider value={{user: currentUser, onLogin: handleLogin, onLogout: handleLogout, isLogin}} >
         {children}
     </UserContext.Provider>;
 };

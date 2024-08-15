@@ -10,12 +10,6 @@
     gap: 16px;
 }
 
-
-.favorites {
-    color: #37D8A7;
-
-}
-
 .rating {
     display: flex;
     width: fit-content;
@@ -60,6 +54,3 @@
     padding-left: 8px;
 }
 
-.favAction {
-    padding-left: 4px;
-}

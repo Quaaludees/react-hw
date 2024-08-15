@@ -12,13 +12,13 @@ const Header = () => {
     const handleClick = (path) => () => {
         console.log(path);
     };
-    const {user, onLogout} = useUserContext();
+    const {user, onLogout, isLogin} = useUserContext();
     
     const menuItems = [
         { onClick: handleClick('search'), title: 'Поиск фильмов' },
-        { onClick: handleClick('fav'), title: 'Мои фильмы', count: 2, isHidden: !user },
-        { onClick: handleClick('profile'), title: user?.name, icon: <UserIcon />, isHidden: !user },
-        { onClick: onLogout, title: user ? 'Выйти' : 'Войти' , icon: <LoginIcon /> }
+        { onClick: handleClick('fav'), title: 'Мои фильмы', count: 2, isHidden: !isLogin },
+        { onClick: handleClick('profile'), title: user?.name, icon: <UserIcon />, isHidden: !isLogin },
+        { onClick: onLogout, title: isLogin ? 'Выйти' : 'Войти' , icon: <LoginIcon /> }
 
     ];
 
