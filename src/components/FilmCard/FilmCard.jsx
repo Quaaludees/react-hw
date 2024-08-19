@@ -1,33 +1,29 @@
 import React from 'react';
-import './FilmCard.css';
-import {Button} from "../Button";
-import StarIcon from "../icons/StarIcon.jsx";
-import LikeIcon from "../icons/LikeIcon.jsx";
-import FavIcon from "../icons/FavIcon.jsx";
+import styles from './FilmCard.module.css';
+import StarIcon from '../icons/StarIcon.jsx';
+import {Maybe} from '../Maybe/index.js';
+import {FavoriteAction} from '../FavoriteAction';
 
 
+const DEFAULT_FILM_NAME = 'Название не указано';
 const FilmCard = ({count, poster, filmName, isFavorites}) => {
-    return <div className='film-card__wrapper'>
-        <div className='film-card__rating'>
-            <StarIcon/>
-            <p className='film-card__count'>{count}</p>
-        </div>
-        <div className='film-card__poster'>
+    return <div className={styles.wrapper}>
+        <Maybe when={!!count}>
+            <div className={styles.rating}>
+                <StarIcon/>
+                <p className={styles.count}>{count}</p>
+            </div>
+        </Maybe>
+        <div className={styles.poster}>
             <img src={poster} alt="poster"/>
         </div>
-        <div className='film-card__title'><p>{filmName}</p></div>
-        <div className='film-card__fav-action'>
-            <Button variants={'text'} className={isFavorites ? 'favorites' : undefined}>
-                {isFavorites ? <>
-                    <FavIcon/>
-                    В избраном
-                </> : <>
-                    <LikeIcon/>
-                    В избранное
-                </>}
-            </Button>
-        </div>
-    </div>
+        <div className={styles.title}><p>{filmName || DEFAULT_FILM_NAME}</p></div>
+        <FavoriteAction
+            isFavorites={isFavorites}
+            onClick={console.log}
+            id={'storka'}
+        />
+    </div>;
 };
 
 export default FilmCard;

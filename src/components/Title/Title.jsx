@@ -1,9 +1,9 @@
 import React from 'react';
-import './Title.css';
+import styles from './Title.module.css';
 
 const Title = ({ title }) => {
     return (
-        <h1 className="title__main">
+        <h1 className={styles.root}>
             {title}
         </h1>
     );

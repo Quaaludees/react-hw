@@ -1,21 +1,16 @@
 
-.film-card__wrapper {
+.wrapper {
     background: #20283ECC;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     padding: 8px 8px 24px 8px;
     border-radius: 12px;
     position: relative;
     gap: 16px;
 }
 
-
-.favorites {
-    color: #37D8A7;
-
-}
-
-.film-card__rating {
+.rating {
     display: flex;
     width: fit-content;
     align-items: center;
@@ -29,26 +24,27 @@
     left: 16px;
 }
 
-.film-card__count {
+.count {
     font-size: 16px;
     font-weight: 400;
     line-height: 24px;
     padding-top: 2px;
 }
 
-.film-card__poster {
+.poster {
+    min-height: 400px;
     width: 100%;
     border-radius: 8px;
     overflow: hidden;
     cursor: pointer;
 }
 
-.film-card__poster > img {
+.poster > img {
     width: 100%;
     border-radius: 8px;
 }
 
-.film-card__title {
+.title {
     font-size: 16px;
     font-weight: 600;
     line-height: 24px;
@@ -58,6 +54,3 @@
     padding-left: 8px;
 }
 
-.film-card__fav-action {
-    padding-left: 4px;
-}

@@ -1,39 +1,42 @@
-import {useState} from "react";
-import {Title} from "../Title/index.js";
-import {Paragraph} from "../Paragraph/index.js";
-import Input from "../Input/Input.jsx";
-import {Button} from "../Button/index.js";
-import './SearchFilms.css';
-import FilmCard from "../FilmCard/FilmCard.jsx";
-import {FILMS_DATA, TEXT_CONTENT} from "./constans";
+import styles from './SearchFilms.module.css';
+import FilmCard from '../FilmCard/FilmCard.jsx';
+import {FILMS_DATA} from './constans';
+import SearchForm from '../SearchForm/SearchForm.jsx';
+import {Maybe} from '../Maybe/index.js';
+import {Paragraph} from '../Paragraph/index.js';
 
 
+const SearchFilms = () => {
+    const handleClick = (value) => {
 
-function SearchFilms() {
-    const handleClick = () => {
-        console.log(inputData);
+        console.log(value);
     };
-    const [inputData, setInputData] = useState('');
-
-
-    const handleChange = (event) => {
-        setInputData(event.target.value);
-    };
+    
 
     return <>
-        <div className="search_films__wrapper">
-            <Title title="ПОИСК"/>
-            <Paragraph>{TEXT_CONTENT}</Paragraph>
-            <Input placeholder="Введите название" onChange={handleChange} isSearch/>
-            <Button onClick={handleClick}>Искать</Button>
-        </div>
-        <div className='search_films__list'>
-            {FILMS_DATA.map(({filmName,poster,count, isFavorites}) => (
-                <FilmCard key={filmName} filmName={filmName} poster={poster} isFavorites={isFavorites} count={count}/>
-            ))}
+        <SearchForm onSubmit={handleClick}/>
+        <div className={styles.list}>
+            <Maybe
+                when={!!FILMS_DATA?.length}
+                fallback={
+                    <Paragraph>
+                        Упс... Ничего не найдено
+                    </Paragraph>
+                }
+            >
+                {FILMS_DATA?.map(({filmName, poster, count, isFavorites}, index) => (
+                    <FilmCard
+                        key={`${filmName}_${index}`}
+                        filmName={filmName}
+                        poster={poster}
+                        isFavorites={isFavorites}
+                        count={count}
+                    />
+                ))}
+            </Maybe>
         </div>
     </>;
 
-}
+};
 
 export default SearchFilms;

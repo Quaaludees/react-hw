@@ -1,14 +1,12 @@
-import './Body.css';
+import styles from './Body.module.css';
 
-function Body({ children }) {
-
-
+const Body = ({ children }) => {
 
     return (
-        <div className='body-wrapper'>
+        <div className={styles.wrapper}>
             {children}
         </div>
     );
-}
+};
 
 export default Body;

@@ -1,21 +1,24 @@
-import React from 'react';
-import SearchIcon from "../icons/SearchIcon.jsx";
-import './Input.css';
+import React, {forwardRef} from 'react';
+import SearchIcon from '../icons/SearchIcon.jsx';
+import styles from './Input.module.css';
+import cn from 'classnames';
 
-const Input = ({type, name, value, onChange, isSearch, placeholder}) => {
+
+const Input = forwardRef (({isValid = true, isSearch, ...props}, ref) => {
     return (
-        <div className='input-wrapper'>
-            {isSearch && <div className='input-wrapper__icon'><SearchIcon/></div>}
-            <input className={!isSearch ? 'input-wrapper__input' : 'input-wrapper__input input-wrapper__input__search'}
-                   type={type}
-                   name={name}
-                   value={value}
-                   onChange={onChange}
-                   placeholder={placeholder}
+        <div className={styles.wrapper}>
+            {isSearch && <div className={styles.icon}><SearchIcon/></div>}
+            <input className={cn(styles.root, {
+                [styles.search]: isSearch,
+                [styles.invalid]: !isValid
+            })}
+
+                   ref={ref}
+                   {...props}
 
             />
         </div>
     );
-};
-
+});
+Input.displayName = 'Input';
 export default Input;
