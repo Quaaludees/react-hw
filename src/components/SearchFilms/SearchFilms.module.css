@@ -1,8 +1,6 @@
-.search_films__wrapper {
-    max-width: 600px;
-}
 
-.search_films__list {
+
+.list {
     margin-top: 80px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);

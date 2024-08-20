@@ -1,8 +1,13 @@
 import React from 'react';
-import './Body.css';
+import styles from './Body.module.css';
 
-function Body({ children }) {
-    return <div className="body-wrapper">{children}</div>;
-}
+const Body = ({ children }) => {
+
+    return (
+        <div className={styles.wrapper}>
+            {children}
+        </div>
+    );
+};
 
 export default Body;

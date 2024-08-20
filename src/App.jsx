@@ -1,21 +1,24 @@
 import React from 'react';
 import './App.css';
-import { Header } from './components/Header/index.ts';
+import {Header} from './components/Header/index.js';
 import HeaderLayout from './layouts/HeaderLayout/HeaderLayout.jsx';
 import Body from './layouts/Body/Body.jsx';
-import { SearchFilms } from './components/SearchFilms/index.js';
+import {UserContextProvider} from './provider/user/index.js';
+import MainPage from './components/MainPage/MainPage.jsx';
 
-function App() {
+const App = () => {
+
     return (
-        <>
+        <UserContextProvider>
             <HeaderLayout>
-                <Header />
+                <Header/>
             </HeaderLayout>
             <Body>
-                <SearchFilms />
+               <MainPage/>
             </Body>
-        </>
+        </UserContextProvider>
     );
-}
+};
 
 export default App;
+

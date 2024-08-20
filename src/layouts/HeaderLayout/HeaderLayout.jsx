@@ -1,8 +1,13 @@
-import React from 'react';
-import './HeaderLayout.css';
+import styles from './HeaderLayout.module.css';
 
-function HeaderLayout({ children }) {
-    return <div className="header-wrapper">{children}</div>;
+const HeaderLayout = ({ children }) => {
+
+
+    return (
+        <div className={styles.wrapper}>
+            {children}
+        </div>
+    );
 }
 
 export default HeaderLayout;

@@ -1,16 +1,5 @@
-.header-navigation {
 
-}
-
-
-.header-navigation__list {
-    display: flex;
-    gap: 16px;
-    list-style-type: none;
-
-}
-
-.header-navigation__list__item {
+.item {
     font-size: 16px;
     font-weight: 600;
     line-height: 24px;
@@ -23,7 +12,7 @@
 
 }
 
-.link-count {
+.count {
     width: 24px;
     height: 24px;
     background: #7B6EF6;
@@ -32,7 +21,6 @@
     justify-content: center;
     align-items: center;
     color: #FFFFFF;
-    font-family: Poppins;
     font-size: 14px;
     font-weight: 600;
     line-height: 24px;
