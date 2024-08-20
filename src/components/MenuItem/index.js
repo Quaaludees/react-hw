@@ -1,1 +1,0 @@
-    export {default as MenuItems} from './MenuItem.jsx';

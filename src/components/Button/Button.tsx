@@ -1,12 +1,7 @@
 import React, { FC, PropsWithChildren } from 'react';
-import './Button.css';
+import styles from './Button.module.css';
 import { ButtonProps } from './Button.props';
-
-const variantsMaps: Record<string, string> = {
-    button: 'button',
-    text: 'button-text',
-};
-
+import cn from 'classnames';
 const Button: FC<PropsWithChildren<ButtonProps>> = ({
     children,
     onClick,
@@ -16,7 +11,10 @@ const Button: FC<PropsWithChildren<ButtonProps>> = ({
 }) => {
     return (
         <button
-            className={[variantsMaps[variants], className].join(' ')}
+            className={cn(className, {
+                [styles.button]: variants === 'button',
+                [styles.text]: variants === 'text',
+            })}
             type={type}
             onClick={onClick}>
             {children}

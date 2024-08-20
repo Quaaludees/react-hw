@@ -9,7 +9,7 @@ module.exports = {
     "plugin:react-hooks/recommended",
     'plugin:prettier/recommended'
   ],
-  ignorePatterns: ['dist', '.eslintrc.cjs', 'vite.config.js'],
+  ignorePatterns: ['dist', '.eslintrc.cjs'],
   parserOptions: {
     sourceType: 'module',
     project: [
@@ -47,6 +47,8 @@ module.exports = {
       ],
       rules: {
         '@typescript-eslint/no-use-before-define': ['error'],
+        '@typescript-eslint/no-unsafe-member-access': 0,
+        '@typescript-eslint/no-unsafe-assignment': 0,
       },
     },
   ],

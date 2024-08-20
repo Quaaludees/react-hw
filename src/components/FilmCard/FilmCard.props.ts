@@ -1,6 +1,6 @@
 export interface FilmCardProps {
-    count: number;
+    count?: number;
     poster?: string;
-    filmName: string;
+    filmName?: string;
     isFavorites: boolean;
 }

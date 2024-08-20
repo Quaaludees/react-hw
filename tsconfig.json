@@ -20,13 +20,6 @@
     "baseUrl": "src",
     "composite": true,
     "declaration": true,
-    "paths": {
-      "common/*": ["common/*"],
-      "shared/*": ["shared/*"],
-      "widgets/*": ["widgets/*"],
-      "entities/*": ["entities/*"],
-      "features/*": ["features/*"],
-    }
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules", "dist", "*.d.ts"]
