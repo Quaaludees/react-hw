@@ -2,11 +2,7 @@ import React from 'react';
 import './Title.css';
 
 const Title = ({ title }) => {
-    return (
-        <h1 className="title__main">
-            {title}
-        </h1>
-    );
+    return <h1 className="title__main">{title}</h1>;
 };
 
 export default Title;

@@ -1,4 +1,3 @@
-export * from "./Button"
-export * from "./Paragraph"
-export * from "./Title"
-
+export * from './Button/index.js';
+export * from './Paragraph';
+export * from './Title';

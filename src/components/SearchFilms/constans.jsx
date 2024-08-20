@@ -1,14 +1,14 @@
-import poster1 from "../../assets/poster1.jpg";
-import poster2 from "../../assets/poster2.jpg";
-import poster3 from "../../assets/poster3.jpg";
-import poster4 from "../../assets/poster4.jpg";
-import poster5 from "../../assets/poster5.jpg";
-import poster6 from "../../assets/poster6.jpg";
-import poster7 from "../../assets/poster7.jpg";
-import poster8 from "../../assets/poster8.jpg";
+import poster1 from '../../assets/poster1.jpg';
+import poster2 from '../../assets/poster2.jpg';
+import poster3 from '../../assets/poster3.jpg';
+import poster4 from '../../assets/poster4.jpg';
+import poster5 from '../../assets/poster5.jpg';
+import poster6 from '../../assets/poster6.jpg';
+import poster7 from '../../assets/poster7.jpg';
+import poster8 from '../../assets/poster8.jpg';
 
-
-export const TEXT_CONTENT = "Введите название фильма, сериала или мультфильма для поиска и добавления в избранное.";
+export const TEXT_CONTENT =
+    'Введите название фильма, сериала или мультфильма для поиска и добавления в избранное.';
 export const FILMS_DATA = [
     {
         count: 324,
@@ -58,6 +58,4 @@ export const FILMS_DATA = [
         filmName: 'Two And a Half Men',
         isFavorites: false,
     },
-
 ];
-

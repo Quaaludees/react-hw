@@ -1,1 +1,1 @@
-export {default as HeaderNavigation} from "./HeaderNavigation.jsx"
+export { default as HeaderNavigation } from './HeaderNavigation.tsx';

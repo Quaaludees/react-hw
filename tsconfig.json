@@ -1,0 +1,33 @@
+{
+  "compilerOptions": {
+    "experimentalDecorators": true,
+    "target": "es6",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react",
+    "outDir": "./dist",
+    "baseUrl": "src",
+    "composite": true,
+    "declaration": true,
+    "paths": {
+      "common/*": ["common/*"],
+      "shared/*": ["shared/*"],
+      "widgets/*": ["widgets/*"],
+      "entities/*": ["entities/*"],
+      "features/*": ["features/*"],
+    }
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist", "*.d.ts"]
+}

@@ -1,1 +1,1 @@
-export {default as HeaderLayout} from "./HeaderLayout.jsx"
+export { default as HeaderLayout } from './HeaderLayout.jsx';
