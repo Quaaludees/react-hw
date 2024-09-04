@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, MouseEvent } from 'react';
 import styles from './FavoriteAction.module.css';
 import { Button } from '../Button';
 import LikeIcon from '../icons/LikeIcon';
@@ -11,10 +11,15 @@ const FavoriteAction: FC<IFavoriteActionProps> = ({
     isFavorites,
     id,
 }) => {
+    const handleClick = (event: MouseEvent<HTMLButtonElement>) => {
+        event.stopPropagation();
+        onClick(id);
+    };
+
     return (
         <div className={styles.favAction}>
             <Button
-                onClick={() => onClick(id)}
+                onClick={handleClick}
                 variants={'text'}
                 className={cn({
                     [styles.favorites]: isFavorites,

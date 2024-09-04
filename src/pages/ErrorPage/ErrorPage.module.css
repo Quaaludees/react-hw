@@ -1,0 +1,149 @@
+
+
+
+.wrap{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.notFound {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: 150px;
+    font-size: 32px;
+    text-transform: uppercase;
+    transform: translate(-50%, -50%);
+    display: block;
+    color: #12000a;
+    font-weight: 100;
+    text-shadow: 0 0 4px #12000a;
+    animation: fadeInText 3s ease-in 3.5s forwards, flicker4 5s linear 7.5s infinite, hueRotate 6s ease-in-out 3s infinite;
+    text-decoration: none;
+}
+
+#svgWrap_1,
+#svgWrap_2{
+    position: absolute;
+    height: auto;
+    width: 600px;
+    max-width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#svgWrap_1,
+#svgWrap_2,
+div{
+    animation: hueRotate 6s ease-in-out 3s infinite;
+}
+
+#id1_1,
+#id2_1,
+#id3_1{
+    stroke: #7B6EF6;
+;
+    stroke-width: 3px;
+    fill: transparent;
+    filter: url(#glow);
+}
+
+#id1_2,
+#id2_2,
+#id3_2{
+    stroke: #12000a;
+    stroke-width: 3px;
+    fill: transparent;
+    filter: url(#glow);
+}
+
+#id3_1{
+    stroke-dasharray: 940;
+    stroke-dashoffset: -940;
+    animation: drawLine3 2.5s ease-in-out 0s forwards, flicker3 4s linear 4s infinite;
+}
+
+#id2_1{
+    stroke-dasharray: 735px;
+    stroke-dashoffset: -735px;
+    animation: drawLine2 2.5s ease-in-out 0.5s forwards, flicker2 4s linear 4.5s infinite;
+}
+
+#id1_1{
+    stroke-dasharray: 940;
+    stroke-dashoffset: -940;
+    animation: drawLine1 2.5s ease-in-out 1s forwards, flicker1 4s linear 5s infinite;
+}
+
+@keyframes drawLine1 {
+    0%  {stroke-dashoffset: -940;}
+    100%{stroke-dashoffset: 0;}
+}
+
+@keyframes drawLine2 {
+    0%  {stroke-dashoffset: -735px;}
+    100%{stroke-dashoffset: 0;}
+}
+
+@keyframes drawLine3 {
+    0%  {stroke-dashoffset: -940;}
+    100%{stroke-dashoffset: 0;}
+}
+
+@keyframes flicker1{
+    0%  {stroke: #7B6EF6;}
+    1%  {stroke: transparent;}
+    3%  {stroke: transparent;}
+    4%  {stroke: #7B6EF6;}
+    6%  {stroke: #7B6EF6;}
+    7%  {stroke: transparent;}
+    13% {stroke: transparent;}
+    14% {stroke: #7B6EF6;}
+    100%{stroke: #7B6EF6;}
+}
+
+@keyframes flicker2{
+    0%  {stroke: #7B6EF6;}
+    50% {stroke: #7B6EF6;}
+    51% {stroke: transparent;}
+    61% {stroke: transparent;}
+    62% {stroke: #7B6EF6;}
+    100%{stroke: #7B6EF6;}
+}
+
+@keyframes flicker3{
+    0%  {stroke: #7B6EF6;}
+    1%  {stroke: transparent;}
+    10% {stroke: transparent;}
+    11% {stroke: #7B6EF6;}
+    40% {stroke: #7B6EF6;}
+    41% {stroke: transparent;}
+    45% {stroke: transparent;}
+    46% {stroke: #7B6EF6;}
+    100%{stroke: #7B6EF6;}
+}
+
+@keyframes flicker4{
+    0%  {color: #7B6EF6;text-shadow:0 0 41px #7B6EF6;}
+    30% {color: #7B6EF6;text-shadow:0 0 4px #7B6EF6;}
+    31% {color: #12000a;text-shadow:0 0 4px #12000a;}
+    32% {color: #7B6EF6;text-shadow:0 0 4px #7B6EF6;}
+    36% {color: #7B6EF6;text-shadow:0 0 4px #7B6EF6;}
+    37% {color: #12000a;text-shadow:0 0 4px #12000a;}
+    41% {color: #12000a;text-shadow:0 0 4px #12000a;}
+    42% {color: #7B6EF6;text-shadow:0 0 4px #7B6EF6;}
+    85% {color: #7B6EF6;text-shadow:0 0 4px #7B6EF6;}
+    86% {color: #12000a;text-shadow:0 0 4px #12000a;}
+    95% {color: #12000a;text-shadow:0 0 4px #12000a;}
+    96% {color: #7B6EF6;text-shadow:0 0 4px #7B6EF6;}
+    100%{color: #7B6EF6;text-shadow:0 0 4px #7B6EF6;}
+}
+
+@keyframes fadeInText{
+    1%  {color: #12000a;text-shadow:0 0 4px #12000a;}
+    70% {color: #7B6EF6;text-shadow:0 0 14px #7B6EF6;}
+    100%{color: #7B6EF6;text-shadow:0 0 4px #7B6EF6;}
+}

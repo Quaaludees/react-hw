@@ -10,7 +10,7 @@ export const UserContextProvider: FC<PropsWithChildren> = ({ children }) => {
 
     const isLogin = !!currentUser;
 
-    const handleLogin = (userName: string) => {
+    const handleLogin = (userName: string, cb?: () => void) => {
         const user = users?.find(el => el.name === userName);
         if (!user) {
             setUsers([
@@ -39,6 +39,7 @@ export const UserContextProvider: FC<PropsWithChildren> = ({ children }) => {
                 };
             })
         );
+        cb?.();
     };
 
     const handleLogout = () => {

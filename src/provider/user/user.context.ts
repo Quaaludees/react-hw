@@ -3,7 +3,7 @@ import { IUser } from './types';
 
 export interface IUserContext {
     isLogin: boolean | null;
-    onLogin: ((userName: string) => void) | null;
+    onLogin: ((userName: string, cb?: () => void) => void) | null;
     onLogout: (() => void) | null;
     user: IUser | null;
 }

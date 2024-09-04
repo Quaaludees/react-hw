@@ -11,9 +11,10 @@ const HeaderNavigation: FC<Props> = ({ menuItems }) => {
         <nav className={styles.navigation}>
             <ul className={styles.list}>
                 {menuItems.map(
-                    ({ title, count, icon, onClick, isHidden }, index) => {
+                    ({ to, title, count, icon, onClick, isHidden }, index) => {
                         return (
                             <MenuItem
+                                to={to}
                                 key={`${title}_${index}`}
                                 title={title}
                                 count={count}

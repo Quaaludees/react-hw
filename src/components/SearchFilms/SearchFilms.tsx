@@ -19,8 +19,12 @@ const SearchFilms = () => {
                     when={!!FILMS_DATA?.length}
                     fallback={<Paragraph>Упс... Ничего не найдено</Paragraph>}>
                     {FILMS_DATA?.map(
-                        ({ filmName, poster, count, isFavorites }, index) => (
+                        (
+                            { id, filmName, poster, count, isFavorites },
+                            index
+                        ) => (
                             <FilmCard
+                                id={id}
                                 key={`${filmName}_${index}`}
                                 filmName={filmName}
                                 poster={poster}

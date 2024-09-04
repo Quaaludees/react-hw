@@ -4,6 +4,7 @@ export interface MenuItemProps {
     title: string;
     count?: number;
     icon?: ReactNode;
-    onClick: () => void;
+    onClick?: () => void;
     isHidden?: boolean;
+    to?: string;
 }

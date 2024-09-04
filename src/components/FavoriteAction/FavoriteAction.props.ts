@@ -1,5 +1,5 @@
 export interface IFavoriteActionProps {
-    onClick: (id: string) => void;
+    onClick: (id: string | number) => void;
     isFavorites: boolean;
-    id: string;
+    id: string | number;
 }

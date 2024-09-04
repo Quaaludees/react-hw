@@ -4,16 +4,22 @@ import StarIcon from '../icons/StarIcon.js';
 import { Maybe } from '../Maybe';
 import { FavoriteAction } from '../FavoriteAction';
 import { FilmCardProps } from './FilmCard.props';
+import { useNavigate } from 'react-router-dom';
 
 const DEFAULT_FILM_NAME = 'Название не указано';
 const FilmCard: FC<FilmCardProps> = ({
+    id,
     count,
     poster,
     filmName,
     isFavorites,
 }) => {
+    const navigate = useNavigate();
+    const handleNavigate = () => {
+        navigate(`/film/${id}`);
+    };
     return (
-        <div className={styles.wrapper}>
+        <div onClick={handleNavigate} className={styles.wrapper}>
             <Maybe when={!!count}>
                 <div className={styles.rating}>
                     <StarIcon />
@@ -29,7 +35,7 @@ const FilmCard: FC<FilmCardProps> = ({
             <FavoriteAction
                 isFavorites={isFavorites}
                 onClick={console.log}
-                id={'storka'}
+                id={id}
             />
         </div>
     );

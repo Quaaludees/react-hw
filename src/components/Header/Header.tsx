@@ -6,27 +6,26 @@ import UserIcon from '../icons/UserIcon.js';
 import { useUserContext } from '../../provider/user';
 
 const Header = () => {
-    const handleClick = (path: string) => () => {
-        console.log(path);
-    };
     const { user, onLogout, isLogin } = useUserContext();
 
     const menuItems = [
-        { onClick: handleClick('search'), title: 'Поиск фильмов' },
+        { title: 'Поиск фильмов', to: '/' },
         {
-            onClick: handleClick('fav'),
+            to: '/favorites',
             title: 'Мои фильмы',
             count: 2,
             isHidden: !isLogin,
         },
         {
-            onClick: handleClick('profile'),
+            to: '/',
+            //TODO: Profilya nema
             title: user?.name || '',
             icon: <UserIcon />,
             isHidden: !isLogin,
         },
         {
-            onClick: isLogin ? () => onLogout?.() : handleClick('auth'),
+            to: '/login',
+            onClick: isLogin ? () => onLogout?.() : undefined,
             title: isLogin ? 'Выйти' : 'Войти',
             icon: <LoginIcon />,
         },

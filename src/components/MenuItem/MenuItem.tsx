@@ -1,9 +1,12 @@
-import React from 'react';
-import { item, count as countClassName } from './MenuItem.module.css';
+import React, { MouseEvent } from 'react';
+import styles from './MenuItem.module.css';
 import { FC } from 'react';
 import { MenuItemProps } from './MenuItem.props';
+import { NavLink } from 'react-router-dom';
+import cn from 'classnames';
 
 const MenuItem: FC<MenuItemProps> = ({
+    to = '/',
     title,
     count,
     icon,
@@ -14,15 +17,27 @@ const MenuItem: FC<MenuItemProps> = ({
         return null;
     }
 
+    const handleClick = (event: MouseEvent<HTMLAnchorElement>) => {
+        if (onClick) {
+            event.preventDefault();
+            onClick();
+        }
+    };
+
     return (
-        <li className={item as string}>
-            <div onClick={onClick} className={item as string}>
+        <li className={styles['item']}>
+            <NavLink
+                onClick={handleClick}
+                to={to}
+                className={({ isActive }) =>
+                    cn(styles['item'], {
+                        [styles.active]: isActive,
+                    })
+                }>
                 {title}
-                {count && (
-                    <div className={countClassName as string}>{count}</div>
-                )}
+                {count && <div className={styles['count']}>{count}</div>}
                 {icon}
-            </div>
+            </NavLink>
         </li>
     );
 };
