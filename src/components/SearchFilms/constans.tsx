@@ -10,7 +10,7 @@ import poster8 from '../../assets/poster8.jpg';
 export const FILMS_DATA = [
     {
         id: 1,
-        count: undefined,
+        count: 1,
         poster: poster1,
         filmName: 'Black Widow',
         isFavorites: true,
