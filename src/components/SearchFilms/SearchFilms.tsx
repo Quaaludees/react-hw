@@ -6,6 +6,7 @@ import { Maybe } from '../Maybe';
 import { Paragraph } from '../Paragraph';
 import { useFilmsPopularQuery, useFilmsSearchQuery } from '../../api';
 import { Loader } from '../Loader';
+import cn from 'classnames';
 
 const SearchFilms = () => {
     const [query, setQuery] = useState('');
@@ -64,12 +65,6 @@ const SearchFilms = () => {
         <>
             <SearchForm onSubmit={handleClick} />
             <div className={styles.list}>
-                <Maybe when={results?.length === 0}>
-                    <Paragraph>
-                        Упс... Ничего не найдено. Попробуйте изменить запрос или
-                        ввести более точное название фильма
-                    </Paragraph>
-                </Maybe>
                 <Maybe
                     when={!!results?.length && !isFetching}
                     fallback={
@@ -94,6 +89,15 @@ const SearchFilms = () => {
                     </Maybe>
                 </Maybe>
             </div>
+            <Maybe when={results?.length === 0}>
+                <Paragraph className={cn(styles.centre, styles.title)}>
+                    Упс... Ничего не найдено.
+                </Paragraph>
+                <Paragraph className={styles.centre}>
+                    Попробуйте изменить запрос или ввести более точное название
+                    фильма
+                </Paragraph>
+            </Maybe>
         </>
     );
 };
