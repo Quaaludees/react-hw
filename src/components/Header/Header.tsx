@@ -24,7 +24,7 @@ const Header = () => {
             isHidden: !isLogin,
         },
         {
-            to: '/login',
+            to: '/auth/login',
             onClick: isLogin ? () => onLogout?.() : undefined,
             title: isLogin ? 'Выйти' : 'Войти',
             icon: <LoginIcon />,

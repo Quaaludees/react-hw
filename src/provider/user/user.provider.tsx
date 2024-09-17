@@ -23,6 +23,7 @@ export const UserContextProvider: FC<PropsWithChildren> = ({ children }) => {
                     isLogin: true,
                 },
             ]);
+            cb?.();
             return;
         }
         setUsers(
