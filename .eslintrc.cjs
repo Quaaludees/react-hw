@@ -22,6 +22,7 @@ module.exports = {
   rules: {
     'react/prop-types': 0,
     '@typescript-eslint/no-use-before-define': ['error'],
+
     'react/jsx-wrap-multilines': [
       1,
       {
@@ -49,6 +50,8 @@ module.exports = {
         '@typescript-eslint/no-use-before-define': ['error'],
         '@typescript-eslint/no-unsafe-member-access': 0,
         '@typescript-eslint/no-unsafe-assignment': 0,
+        "@typescript-eslint/no-explicit-any": 0,
+        "@typescript-eslint/no-unsafe-argument": 0,
       },
     },
   ],

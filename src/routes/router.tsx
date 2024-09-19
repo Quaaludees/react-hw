@@ -2,23 +2,22 @@ import { createBrowserRouter, Outlet } from 'react-router-dom';
 import React from 'react';
 import Layout from '../layouts/Layout/Layout';
 import { ViewFilm, MainPage, Favorites, FormLogin, ErrorPage } from '../pages';
+import { RequireAuth } from '../helpers/RequireAuth';
 
 export const router = createBrowserRouter([
     {
         path: '/',
         element: (
-            <Layout>
-                <Outlet />
-            </Layout>
+            <RequireAuth>
+                <Layout>
+                    <Outlet />
+                </Layout>
+            </RequireAuth>
         ),
         children: [
             {
                 element: <MainPage />,
                 index: true,
-            },
-            {
-                path: '/login',
-                element: <FormLogin />,
             },
             {
                 path: '/film/:id',
@@ -27,6 +26,20 @@ export const router = createBrowserRouter([
             {
                 path: '/favorites',
                 element: <Favorites />,
+            },
+        ],
+    },
+    {
+        path: '/auth',
+        element: (
+            <Layout>
+                <Outlet />
+            </Layout>
+        ),
+        children: [
+            {
+                path: 'login',
+                element: <FormLogin />,
             },
         ],
     },

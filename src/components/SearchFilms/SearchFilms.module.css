@@ -7,3 +7,17 @@
     column-gap: 24px;
     row-gap: 16px;
 }
+
+
+.centre {
+    text-align: center;
+
+}
+
+.title {
+    color: #EBEEF5;
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 56px;
+}
+

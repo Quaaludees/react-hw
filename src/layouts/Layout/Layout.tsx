@@ -4,7 +4,6 @@ import Body from '../Body/Body';
 import React, { FC, PropsWithChildren } from 'react';
 
 const Layout: FC<PropsWithChildren> = ({ children }) => {
-    console.log('brbrbrbrb');
     return (
         <>
             <HeaderLayout>
