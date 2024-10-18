@@ -1,10 +1,12 @@
 import React, { FC, PropsWithChildren } from 'react';
 import { Navigate } from 'react-router-dom';
-import { useUserContext } from '../provider/user';
+import { useSelector } from 'react-redux';
+import { RootState } from '../store/store';
 
 export const RequireAuth: FC<PropsWithChildren> = ({ children }) => {
-    const { isLogin } = useUserContext();
-    if (!isLogin) {
+    const { currentUser } = useSelector((s: RootState) => s.user);
+
+    if (!currentUser) {
         return <Navigate to="/auth/login" replace />;
     }
     return children;

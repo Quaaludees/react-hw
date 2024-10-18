@@ -8,11 +8,13 @@ import React, {
     useRef,
     useState,
 } from 'react';
-import { useUserContext } from '../../provider/user';
 import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { AppDispatch } from '../../store/store';
+import { userAction } from '../../store/user.slice';
 
 const FormLogin = () => {
-    const { onLogin } = useUserContext();
+    const dispatch = useDispatch<AppDispatch>();
     const [value, setValue] = useState('');
     const [isValid, setValid] = useState(true);
     const inputRef = useRef<HTMLInputElement>();
@@ -36,7 +38,12 @@ const FormLogin = () => {
             inputRef?.current?.focus();
             return;
         }
-        onLogin?.(value, () => navigate('/'));
+        dispatch(
+            userAction.login({
+                userName: value,
+                cb: () => navigate('/'),
+            })
+        );
     };
 
     useEffect(() => {
