@@ -35,7 +35,7 @@ const MenuItem: FC<MenuItemProps> = ({
                     })
                 }>
                 {title}
-                {count && <div className={styles['count']}>{count}</div>}
+                {!!count && <div className={styles['count']}>{count}</div>}
                 {icon}
             </NavLink>
         </li>
