@@ -1,35 +1,47 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styles from './Header.module.css';
 import HeaderNavigation from '../HeaderNavigation/HeaderNavigation.jsx';
 import LoginIcon from '../icons/LoginIcon.js';
 import UserIcon from '../icons/UserIcon.js';
-import { useUserContext } from '../../provider/user';
+import { useDispatch, useSelector } from 'react-redux';
+import { AppDispatch, RootState } from '../../store/store';
+import { userAction } from '../../store/user.slice';
+import { favoritesMovieAction } from '../../store/favorites.slice';
 
 const Header = () => {
-    const { user, onLogout, isLogin } = useUserContext();
+    const { currentUser } = useSelector((s: RootState) => s.user);
+
+    const { movies } = useSelector((s: RootState) => s.favorites);
+
+    const dispatch = useDispatch<AppDispatch>();
 
     const menuItems = [
         { title: 'Поиск фильмов', to: '/' },
         {
             to: '/favorites',
             title: 'Мои фильмы',
-            count: 2,
-            isHidden: !isLogin,
+            count: movies.length,
+            isHidden: !currentUser,
         },
         {
             to: '/',
-            //TODO: Profilya nema
-            title: user?.name || '',
+            title: currentUser?.name || '',
             icon: <UserIcon />,
-            isHidden: !isLogin,
+            isHidden: !currentUser,
         },
         {
             to: '/auth/login',
-            onClick: isLogin ? () => onLogout?.() : undefined,
-            title: isLogin ? 'Выйти' : 'Войти',
+            onClick: currentUser
+                ? () => dispatch(userAction.logout())
+                : undefined,
+            title: currentUser ? 'Выйти' : 'Войти',
             icon: <LoginIcon />,
         },
     ];
+
+    useEffect(() => {
+        dispatch(favoritesMovieAction.initData(currentUser?.name));
+    }, []);
 
     return (
         <header className={styles.header}>

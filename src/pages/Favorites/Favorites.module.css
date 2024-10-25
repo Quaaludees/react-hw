@@ -1,0 +1,23 @@
+
+
+.list {
+    margin-top: 80px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 24px;
+    row-gap: 16px;
+}
+
+
+.centre {
+    text-align: center;
+
+}
+
+.title {
+    color: #EBEEF5;
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 56px;
+}
+

@@ -1,19 +1,20 @@
 import React from 'react';
-import { UserContextProvider } from './provider/user';
 import { RouterProvider } from 'react-router-dom';
 import { router } from './routes/router';
 import { ApiProvider } from './provider/ApiProvider/ApiProvider';
 import { AxiosProvider } from './provider/AxiosProvider/AxiosProvider';
+import { Provider } from 'react-redux';
+import { store } from './store/store';
 
 const App = () => {
     return (
-        <ApiProvider>
-            <AxiosProvider>
-                <UserContextProvider>
+        <Provider store={store}>
+            <ApiProvider>
+                <AxiosProvider>
                     <RouterProvider router={router} />
-                </UserContextProvider>
-            </AxiosProvider>
-        </ApiProvider>
+                </AxiosProvider>
+            </ApiProvider>
+        </Provider>
     );
 };
 
